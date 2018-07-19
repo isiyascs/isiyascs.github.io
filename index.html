@@ -1,11 +1,120 @@
 <html>
-	<head>
-		<title>Mohamed Siyas</title>
-	</head>
-	<body>
-		<h1>My Profile</h1>
-		Mohamed Siyas<br>
-		Triprayar<br>
-		Thrissur
-	</body>
+<head>
+<title>QCABS</title>
+    <style type="text/css">
+    body{
+     margin: 0;
+     padding: 0;
+     background: tomato;
+     background-size: cover;
+     background-position: center;
+     font-family: sans-serif;
+    }
+   .datablock{
+     width: 320px;
+     height: 420px;
+     background: hsla(9, 100%, 64%, 0.4);
+     color: #fff;
+     top: 50%;
+     left: 35%;
+     position: absolute;
+     transform: translate(-50%,-50%);
+     box-sizing: border-box;
+     padding: 100px 30px;
+    }
+.avatar{
+    width: 100px;
+    padding: 50px 7px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+h1{
+    margin: 10px;
+    padding: 0 0 20px;
+    text-align: left;
+    font-size: 25px;
+    background: tomato;
+    border-style: outset;
+    font-family: Georgia;
+    color: #C48484;
+}
+h2{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+.datablock input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.datablock input[type="text"], input[type="text"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.datablock input[type="button"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.datablock input[type="button"]:hover
+{
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+    </style>
+<body>
+    <h1>Q<i style="color: white">CABS</i></h1>
+    <marquee style="color:white">There are currently 3 places available please use Acronyms like TVM, EKM, KOT</marquee>
+    <div class="datablock">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_w3uUNlJcSxV6o_01j1qvMS8TXIdfJy5UTx9RM8KrLNU7Ig8d" class="avatar">
+        <h2>Take Your Cab</h2>
+        <form>
+            <p>Starting Point</p>
+            <input type="text" name="" placeholder="Enter initial point" id="src">
+            <p>Destination</p>
+            <input type="text" name="" placeholder="Enter Destination" id="dst">
+            <input type="button" name="" value="Book" onclick="calculate()">
+            <p id="demo"></p>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function calculate() {
+        var source = String(document.getElementById("src").value);
+        var destination = String(document.getElementById("dst").value);
+	var tv = "TVM";
+	var kt = "KOT";
+	var ek = "EKM"
+	if(source == destination){
+		alert("Please provide different locations");	
+	} else if((source==tv || destination ==tv) && (source == kt || destination == kt)){
+		var res = "You have Auto available with $20 and AC taxi with $50 From. For booking contact our cc(790760758) " + source + " To " + destination;		
+		alert(res);
+	} else if((source==tv || destination ==tv) && (source == ek || destination == ek)){
+		var res = "You have Auto available with $60 and AC taxi with $100 From. For booking contact our cc(790760758)  " + source + " To " + destination;		
+		alert(res);
+	} else if((source==ek || destination ==ek) && (source == kt || destination == kt)){
+		var res = "You have Auto available with $40 and AC taxi with $65 From. For booking contact our cc(790760758)  " + source + " To " + destination;		
+		alert(res);
+	}        
+	//var res = "your Trip has been booked from " + source + "To " + destination;
+        document.getElementById("demo").innerHTML = res;
+    }
+    </script></head> 
+</body>
 </html>
